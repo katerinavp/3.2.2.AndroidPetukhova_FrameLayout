@@ -1,33 +1,16 @@
 package com.example.a322androispetukhova_framelayout;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroupOverlay;
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.example.a322androispetukhova_framelayout.R;
 
 public class MainActivity<engineerCalculator, usualCalculator> extends AppCompatActivity {
 
-    private Button btnPoint;
-    private Button btn0;
-    private Button btn1;
-    private Button btn2;
-    private Button btn3;
-    private Button btn4;
-    private Button btn5;
-    private Button btn6;
-    private Button btn7;
-    private Button btn8;
-    private Button btn9;
+    private Button btnChangeToEngineer;
+    private Button btnChangeToUsual;
     private Button btnDelete;
     private Button btnPositiveNegative;
     private Button btnPer;
@@ -39,11 +22,6 @@ public class MainActivity<engineerCalculator, usualCalculator> extends AppCompat
     private TextView result;
     private TextView numberField;
     private TextView operationField;
-    private Button btnChangeToUsual;
-    private Button btnChangeToEngineer;
-    private RelativeLayout header;
-    private ConstraintLayout engineerCalculator;
-    private LinearLayout usualCalculator;
     String lastOperation = "=";
     Double operand = null;
 
@@ -53,24 +31,12 @@ public class MainActivity<engineerCalculator, usualCalculator> extends AppCompat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
+
     }
 
     private void initViews() {
-        btnPoint = findViewById(R.id.btnPoint);
-        btn0 = findViewById(R.id.btn0);
-        btn1 = findViewById(R.id.btn1);
-        btn2 = findViewById(R.id.btn2);
-        btn3 = findViewById(R.id.btn3);
-        btn4 = findViewById(R.id.btn4);
-        btn5 = findViewById(R.id.btn5);
-        btn6 = findViewById(R.id.btn6);
-        btn7 = findViewById(R.id.btn7);
-        btn8 = findViewById(R.id.btn8);
-        btn9 = findViewById(R.id.btn9);
+
         result = findViewById(R.id.result);
-        btnDelete = findViewById(R.id.btnDelete);
-        btnPositiveNegative = findViewById(R.id.btnPositiveNegative);
-        btnPer = findViewById(R.id.btnPer);
         btnDivide = findViewById(R.id.btnDivide);
         btnMultiplication = findViewById(R.id.btnMultiplication);
         btnMinus = findViewById(R.id.btnMinus);
@@ -78,15 +44,14 @@ public class MainActivity<engineerCalculator, usualCalculator> extends AppCompat
         btnEquals = findViewById(R.id.btnEquals);
         numberField = findViewById(R.id.numberField);
         operationField = findViewById(R.id.operationField);
+        btnPositiveNegative = findViewById(R.id.btnPositiveNegative);
+        btnPer = findViewById(R.id.btnPer);
         btnChangeToUsual = findViewById(R.id.btnChangeToUsual);
-        usualCalculator = findViewById(R.id.usualCalculator);
-        engineerCalculator = findViewById(R.id.engineerCalculator);
-        header = findViewById(R.id.header);
-        btnChangeToEngineer = findViewById(R.id.btnChangeToEngineer );
+        btnChangeToEngineer = findViewById(R.id.btnChangeToEngineer);
+        btnDelete = findViewById(R.id.btnDelete);
 
         setOnClickButton();
-        setOnClickOperation();
-
+        setOnClickChange();
     }
 
     @Override
@@ -107,309 +72,75 @@ public class MainActivity<engineerCalculator, usualCalculator> extends AppCompat
     }
 
 
-    private void setOnClickButton() {
-        btnPoint.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                numberField.append(btnPoint.getText());
-                if (lastOperation.equals("=") && operand != null) {
-                    operand = null;
-                }
-            }
-        });
+    private View.OnClickListener numberButtonListener = new View.OnClickListener() { //создаем переменную слушателя для кнопок с цифрами и точки
 
-        btn0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                numberField.append(btn0.getText());
-                if (lastOperation.equals("=") && operand != null) {
-                    operand = null;
-                }
-            }
-        });
-
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                numberField.append(btn1.getText());
-                if (lastOperation.equals("=") && operand != null) {
-                    operand = null;
-                }
-            }
-        });
-
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                numberField.append(btn2.getText());
-                if (lastOperation.equals("=") && operand != null) {
-                    operand = null;
-                }
-            }
-        });
-
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                numberField.append(btn3.getText());
-                if (lastOperation.equals("=") && operand != null) {
-                    operand = null;
-                }
-            }
-        });
-
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                numberField.append(btn4.getText());
-                if (lastOperation.equals("=") && operand != null) {
-                    operand = null;
-                }
-            }
-        });
-
-        btn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                numberField.append(btn5.getText());
-                if (lastOperation.equals("=") && operand != null) {
-                    operand = null;
-                }
-            }
-        });
-
-        btn6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                numberField.append(btn6.getText());
-                if (lastOperation.equals("=") && operand != null) {
-                    operand = null;
-                }
-            }
-        });
-
-        btn7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                numberField.append(btn7.getText());
-                if (lastOperation.equals("=") && operand != null) {
-                    operand = null;
-                }
-            }
-        });
-
-        btn8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                numberField.append(btn8.getText());
-                if (lastOperation.equals("=") && operand != null) {
-                    operand = null;
-                }
-            }
-        });
-
-        btn9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //result.setText("9");
-                numberField.append(btn9.getText());
-                if (lastOperation.equals("=") && operand != null) {
-                    operand = null;
-                }
-            }
-        });
-
-
-    }
-
-    private void setOnClickOperation() {
-        btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String op = btnDelete.getText().toString();
-                String number = numberField.getText().toString();
-                if (number.length() > 0) {
-                    try {
-                        performOperation(Double.valueOf(number), op);
-                    } catch (NumberFormatException ex) {
-                        numberField.setText("");
-                    }
-                }
+        @Override
+        public void onClick(View v) {
+            Button buttonNumber = (Button) v;
+            numberField.append(buttonNumber.getText());
+            if (lastOperation.equals("=") && operand != null) {
                 operand = null;
-                lastOperation = "";
-                operationField.setText(lastOperation);
-                numberField.setText("");
-                result.setText("");
             }
-        });
+        }
+    };
 
-
-        btnDivide.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                String op = btnDivide.getText().toString();
-                String number = numberField.getText().toString();
-                if (number.length() > 0) {
-                    try {
-                        performOperation(Double.valueOf(number), op);
-                    } catch (NumberFormatException ex) {
-                        numberField.setText("");
-                    }
-                }
-                lastOperation = op;
-                operationField.setText(lastOperation);
-            }
-        });
-        btnEquals.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                String op = btnEquals.getText().toString();
-                String number = numberField.getText().toString();
-                if (number.length() > 0) {
-                    try {
-                        performOperation(Double.valueOf(number), op);
-                    } catch (NumberFormatException ex) {
-                        numberField.setText("");
-                    }
-                }
-                lastOperation = op;
-                operationField.setText(lastOperation);
-            }
-        });
-        btnMinus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String op = btnMinus.getText().toString();
-                String number = numberField.getText().toString();
-                if (number.length() > 0) {
-                    try {
-                        performOperation(Double.valueOf(number), op);
-                    } catch (NumberFormatException ex) {
-                        numberField.setText("");
-                    }
-                }
-                lastOperation = op;
-                operationField.setText(lastOperation);
-            }
-        });
-        btnPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String op = btnPlus.getText().toString();
-                String number = numberField.getText().toString();
-                if (number.length() > 0) {
-                    try {
-                        performOperation(Double.valueOf(number), op);
-                    } catch (NumberFormatException ex) {
-                        numberField.setText("");
-                    }
-                }
-                lastOperation = op;
-                operationField.setText(lastOperation);
-            }
-        });
-        btnPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String op = btnPlus.getText().toString();
-                String number = numberField.getText().toString();
-                if (number.length() > 0) {
-                    try {
-                        performOperation(Double.valueOf(number), op);
-                    } catch (NumberFormatException ex) {
-                        numberField.setText("");
-                    }
-                }
-                lastOperation = op;
-                operationField.setText(lastOperation);
-            }
-        });
-        btnMultiplication.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String op = btnMultiplication.getText().toString();
-                String number = numberField.getText().toString();
-                if (number.length() > 0) {
-                    try {
-                        performOperation(Double.valueOf(number), op);
-                    } catch (NumberFormatException ex) {
-                        numberField.setText("");
-                    }
-                }
-                lastOperation = op;
-                operationField.setText(lastOperation);
-            }
-        });
-        btnPer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String op = btnPer.getText().toString();
-                String number = numberField.getText().toString();
-                if (number.length() > 0) {
-                    try {
-                        performOperation(Double.valueOf(number), op);
-                    } catch (NumberFormatException ex) {
-                        numberField.setText("");
-                    }
-                }
-                lastOperation = op;
-                operationField.setText(lastOperation);
-            }
-        });
-        btnPositiveNegative.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String op = btnPositiveNegative.getText().toString();
-                String number = numberField.getText().toString();
-                if (number.length() > 0) {
-                    try {
-                        performOperation(Double.valueOf(number), op);
-                    } catch (NumberFormatException ex) {
-                        numberField.setText("");
-                    }
-                }
-                lastOperation = op;
-                operationField.setText(lastOperation);
-
-            }
-        });
-        btnChangeToUsual.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                engineerCalculator.setVisibility(View.GONE);
-                usualCalculator.setVisibility((View.VISIBLE));
-                header.setVisibility((View.GONE));
-
-
-
-            }
-        });
-        btnChangeToEngineer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                engineerCalculator.setVisibility(View.VISIBLE);
-                usualCalculator.setVisibility((View.GONE));
-                header.setVisibility((View.VISIBLE));
-            }
-        });
-
+    private void setOnClickButton() {
+        findViewById(R.id.btnPoint).setOnClickListener(numberButtonListener); //устанавливаем слушателя для кнопок всех
+        findViewById(R.id.btn0).setOnClickListener(numberButtonListener);
+        findViewById(R.id.btn1).setOnClickListener(numberButtonListener);
+        findViewById(R.id.btn2).setOnClickListener(numberButtonListener);
+        findViewById(R.id.btn3).setOnClickListener(numberButtonListener);
+        findViewById(R.id.btn4).setOnClickListener(numberButtonListener);
+        findViewById(R.id.btn5).setOnClickListener(numberButtonListener);
+        findViewById(R.id.btn6).setOnClickListener(numberButtonListener);
+        findViewById(R.id.btn7).setOnClickListener(numberButtonListener);
+        findViewById(R.id.btn8).setOnClickListener(numberButtonListener);
+        findViewById(R.id.btn9).setOnClickListener(numberButtonListener);
+        btnDelete.setOnClickListener(numberOperationListener);
+        btnPositiveNegative.setOnClickListener(numberOperationListener);
+        btnPer.setOnClickListener(numberOperationListener);
+        btnDivide.setOnClickListener(numberOperationListener);
+        btnMultiplication.setOnClickListener(numberOperationListener);
+        btnMinus.setOnClickListener(numberOperationListener);
+        btnPlus.setOnClickListener(numberOperationListener);
+        btnEquals.setOnClickListener(numberOperationListener);
     }
+
+    private View.OnClickListener numberOperationListener = new View.OnClickListener() { ///создаем переменную слушателя для операндов ( операций)
+        @Override
+        public void onClick(View v) {
+            Button buttonOperation = (Button) v;
+            String op = buttonOperation.getText().toString();
+            String number = numberField.getText().toString();
+            if (op.equals("C")) {
+                operationField.setText(null);
+                numberField.setText(null);
+                result.setText(null);
+                operand = null;
+            } else {
+                if (op.equals("+/-")) {
+                    double d = Double.parseDouble(number) * -1;
+                    numberField.setText(Double.toString(d));
+                } else {
+                    if (number.length() > 0) {
+                        try {
+                            performOperation(Double.valueOf(number), op);
+                        } catch (NumberFormatException ex) {
+                            numberField.setText("");
+                        }
+                    }
+
+                    lastOperation = op;
+                    operationField.setText(lastOperation);
+
+                }
+            }
+
+        }
+
+    };
 
     private void performOperation(Double number, String operation) {
-
         // если операнд ранее не был установлен (при вводе самой первой операции)
         if (operand == null) {
             operand = number;
@@ -437,21 +168,61 @@ public class MainActivity<engineerCalculator, usualCalculator> extends AppCompat
                 case "-":
                     operand -= number;
                     break;
-                case "C":
-                    operand = null;
-                    break;
                 case "%":
                     operand *= number / 100;
                     break;
-                case "+/-":
-                    operand = number * (-1);
-                    break;
+
             }
+
         }
 
         result.setText(operand.toString());
         numberField.setText("");
+
+    }
+
+    private void setOnClickChange() {
+        btnChangeToUsual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnDelete.setVisibility(View.INVISIBLE);
+                btnDivide.setVisibility(View.INVISIBLE);
+                btnMultiplication.setVisibility(View.INVISIBLE);
+                btnMinus.setVisibility(View.INVISIBLE);
+                btnPlus.setVisibility(View.INVISIBLE);
+                btnEquals.setVisibility(View.INVISIBLE);
+                btnPositiveNegative.setVisibility(View.INVISIBLE);
+                btnPer.setVisibility(View.INVISIBLE);
+                btnChangeToUsual.setVisibility(View.INVISIBLE);
+                btnChangeToEngineer.setVisibility(View.VISIBLE);
+
+//                btnDelete.setVisibility(View.GONE);
+//                btnDivide.setVisibility(View.GONE);
+//                btnMultiplication.setVisibility(View.GONE);
+//                btnMinus.setVisibility(View.GONE);
+//                btnPlus.setVisibility(View.GONE);
+//                btnEquals.setVisibility(View.GONE);
+//                btnPositiveNegative.setVisibility(View.GONE);
+//                btnPer.setVisibility(View.GONE);
+//                btnChangeToUsual.setVisibility(View.GONE);
+//                btnChangeToEngineer.setVisibility(View.VISIBLE);
+            }
+        });
+        btnChangeToEngineer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnDelete.setVisibility(View.VISIBLE);
+                btnDivide.setVisibility(View.VISIBLE);
+                btnMultiplication.setVisibility(View.VISIBLE);
+                btnMinus.setVisibility(View.VISIBLE);
+                btnPlus.setVisibility(View.VISIBLE);
+                btnEquals.setVisibility(View.VISIBLE);
+                btnPositiveNegative.setVisibility(View.VISIBLE);
+                btnPer.setVisibility(View.VISIBLE);
+                btnChangeToUsual.setVisibility(View.VISIBLE);
+                btnChangeToEngineer.setVisibility(View.GONE);
+            }
+
+        });
     }
 }
-
-
