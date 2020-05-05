@@ -55,40 +55,82 @@
             app:layout_constraintGuide_begin="105dp" />
 
         <Button
+            android:id="@+id/btnLog"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Log"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/btnDelete"
+            app:layout_constraintEnd_toStartOf="@+id/btnSin"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+        <Button
+            android:id="@+id/btnSin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="SIN"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/btnPer"
+            app:layout_constraintEnd_toStartOf="@+id/btnCos"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/btnLog"
+            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+        <Button
+            android:id="@+id/btnCos"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="COS"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/btnPer"
+            app:layout_constraintEnd_toStartOf="@+id/btnTan"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/btnSin"
+            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+        <Button
+            android:id="@+id/btnTan"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#FF6F00"
+            android:text="TAN"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/btnDivide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/btnCos"
+            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+        <Button
             android:id="@+id/btnDelete"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="C"
-            android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/btn7"
             app:layout_constraintEnd_toStartOf="@+id/btnPositiveNegative"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+            app:layout_constraintTop_toBottomOf="@+id/btnLog" />
 
         <Button
             android:id="@+id/btnPositiveNegative"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="+/-"
-            android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/btn8"
             app:layout_constraintEnd_toStartOf="@+id/btnPer"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toEndOf="@+id/btnDelete"
-            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+            app:layout_constraintTop_toBottomOf="@+id/btnSin" />
 
         <Button
             android:id="@+id/btnPer"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="%"
-            android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/btn9"
             app:layout_constraintEnd_toStartOf="@+id/btnDivide"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toEndOf="@+id/btnPositiveNegative"
-            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+            app:layout_constraintTop_toBottomOf="@+id/btnCos" />
 
         <Button
             android:id="@+id/btnDivide"
@@ -96,12 +138,11 @@
             android:layout_height="0dp"
             android:backgroundTint="#FF6F00"
             android:text="/"
-            android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/btnMultiplication"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toEndOf="@+id/btnPer"
-            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+            app:layout_constraintTop_toBottomOf="@+id/btnTan" />
 
         <Button
             android:id="@+id/btn7"

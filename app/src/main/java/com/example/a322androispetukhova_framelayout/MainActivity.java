@@ -182,45 +182,32 @@ public class MainActivity<engineerCalculator, usualCalculator> extends AppCompat
     }
 
     private void setOnClickChange() {
+
+        final Button btnLog = findViewById(R.id.btnLog);
+        final Button btnSin = findViewById(R.id.btnSin);
+        final Button btnCos = findViewById(R.id.btnCos);
+        final Button btnTan = findViewById(R.id.btnTan);
         btnChangeToUsual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnDelete.setVisibility(View.INVISIBLE);
-                btnDivide.setVisibility(View.INVISIBLE);
-                btnMultiplication.setVisibility(View.INVISIBLE);
-                btnMinus.setVisibility(View.INVISIBLE);
-                btnPlus.setVisibility(View.INVISIBLE);
-                btnEquals.setVisibility(View.INVISIBLE);
-                btnPositiveNegative.setVisibility(View.INVISIBLE);
-                btnPer.setVisibility(View.INVISIBLE);
-                btnChangeToUsual.setVisibility(View.INVISIBLE);
-                btnChangeToEngineer.setVisibility(View.VISIBLE);
 
-//                btnDelete.setVisibility(View.GONE);
-//                btnDivide.setVisibility(View.GONE);
-//                btnMultiplication.setVisibility(View.GONE);
-//                btnMinus.setVisibility(View.GONE);
-//                btnPlus.setVisibility(View.GONE);
-//                btnEquals.setVisibility(View.GONE);
-//                btnPositiveNegative.setVisibility(View.GONE);
-//                btnPer.setVisibility(View.GONE);
-//                btnChangeToUsual.setVisibility(View.GONE);
-//                btnChangeToEngineer.setVisibility(View.VISIBLE);
+                btnLog.setVisibility(View.GONE);
+                btnSin.setVisibility(View.GONE);
+                btnCos.setVisibility(View.GONE);
+                btnTan.setVisibility(View.GONE);
+                btnChangeToEngineer.setVisibility(View.VISIBLE);
+                //btnChangeToUsual.setVisibility(View.GONE);
             }
         });
         btnChangeToEngineer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnDelete.setVisibility(View.VISIBLE);
-                btnDivide.setVisibility(View.VISIBLE);
-                btnMultiplication.setVisibility(View.VISIBLE);
-                btnMinus.setVisibility(View.VISIBLE);
-                btnPlus.setVisibility(View.VISIBLE);
-                btnEquals.setVisibility(View.VISIBLE);
-                btnPositiveNegative.setVisibility(View.VISIBLE);
-                btnPer.setVisibility(View.VISIBLE);
-                btnChangeToUsual.setVisibility(View.VISIBLE);
+                btnLog.setVisibility(View.VISIBLE);
+                btnSin.setVisibility(View.VISIBLE);
+                btnCos.setVisibility(View.VISIBLE);
+                btnTan.setVisibility(View.VISIBLE);
                 btnChangeToEngineer.setVisibility(View.GONE);
+                btnChangeToUsual.setVisibility(View.VISIBLE);
             }
 
         });
