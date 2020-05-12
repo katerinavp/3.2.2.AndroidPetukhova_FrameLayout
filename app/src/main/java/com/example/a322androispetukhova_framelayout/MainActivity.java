@@ -8,9 +8,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MainActivity<engineerCalculator, usualCalculator> extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
-    private Button btnChangeToEngineer;
     private Button btnChangeToUsual;
     private Button btnDelete;
     private Button btnPositiveNegative;
