@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity<engineerCalculator, usualCalculator> extends AppCompatActivity {
@@ -47,7 +48,7 @@ public class MainActivity<engineerCalculator, usualCalculator> extends AppCompat
         btnPositiveNegative = findViewById(R.id.btnPositiveNegative);
         btnPer = findViewById(R.id.btnPer);
         btnChangeToUsual = findViewById(R.id.btnChangeToUsual);
-        btnChangeToEngineer = findViewById(R.id.btnChangeToEngineer);
+
         btnDelete = findViewById(R.id.btnDelete);
 
         setOnClickButton();
@@ -183,33 +184,20 @@ public class MainActivity<engineerCalculator, usualCalculator> extends AppCompat
 
     private void setOnClickChange() {
 
-        final Button btnLog = findViewById(R.id.btnLog);
-        final Button btnSin = findViewById(R.id.btnSin);
-        final Button btnCos = findViewById(R.id.btnCos);
-        final Button btnTan = findViewById(R.id.btnTan);
+        final LinearLayout row1 = findViewById(R.id.row1);
         btnChangeToUsual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                btnLog.setVisibility(View.GONE);
-                btnSin.setVisibility(View.GONE);
-                btnCos.setVisibility(View.GONE);
-                btnTan.setVisibility(View.GONE);
-                btnChangeToEngineer.setVisibility(View.VISIBLE);
-                //btnChangeToUsual.setVisibility(View.GONE);
-            }
-        });
-        btnChangeToEngineer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                btnLog.setVisibility(View.VISIBLE);
-                btnSin.setVisibility(View.VISIBLE);
-                btnCos.setVisibility(View.VISIBLE);
-                btnTan.setVisibility(View.VISIBLE);
-                btnChangeToEngineer.setVisibility(View.GONE);
-                btnChangeToUsual.setVisibility(View.VISIBLE);
-            }
+                if (row1.getVisibility() == row1.VISIBLE){
+                    row1.setVisibility(View.GONE);
 
+                }else{
+                    row1.setVisibility(View.VISIBLE);
+                }
+            }
         });
+
+
     }
 }

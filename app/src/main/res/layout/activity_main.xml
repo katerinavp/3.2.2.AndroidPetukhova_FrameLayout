@@ -12,7 +12,6 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -54,51 +53,44 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="105dp" />
 
-        <Button
-            android:id="@+id/btnLog"
+        <LinearLayout
+            android:id="@id/row1"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:text="Log"
-            android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/btnDelete"
-            app:layout_constraintEnd_toStartOf="@+id/btnSin"
-            app:layout_constraintHorizontal_chainStyle="spread"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guideline" />
-        <Button
-            android:id="@+id/btnSin"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:text="SIN"
-            android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/btnPer"
-            app:layout_constraintEnd_toStartOf="@+id/btnCos"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toEndOf="@+id/btnLog"
-            app:layout_constraintTop_toBottomOf="@+id/guideline" />
-        <Button
-            android:id="@+id/btnCos"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:text="COS"
-            android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/btnPer"
-            app:layout_constraintEnd_toStartOf="@+id/btnTan"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toEndOf="@+id/btnSin"
-            app:layout_constraintTop_toBottomOf="@+id/guideline" />
-        <Button
-            android:id="@+id/btnTan"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:backgroundTint="#FF6F00"
-            android:text="TAN"
-            android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/btnDivide"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toEndOf="@+id/btnCos"
-            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+            app:layout_constraintTop_toBottomOf="@+id/guideline">
+
+            <Button
+                android:id="@+id/btnLog"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Log" />
+
+            <Button
+                android:id="@+id/btnSin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SIN" />
+
+            <Button
+                android:id="@+id/btnCos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="COS" />
+
+            <Button
+                android:id="@+id/btnTan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#FF6F00"
+                android:text="TAN" />
+        </LinearLayout>
+
         <Button
             android:id="@+id/btnDelete"
             android:layout_width="0dp"
@@ -108,7 +100,7 @@
             app:layout_constraintEnd_toStartOf="@+id/btnPositiveNegative"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnLog" />
+            app:layout_constraintTop_toBottomOf="@+id/row1" />
 
         <Button
             android:id="@+id/btnPositiveNegative"
@@ -119,7 +111,7 @@
             app:layout_constraintEnd_toStartOf="@+id/btnPer"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toEndOf="@+id/btnDelete"
-            app:layout_constraintTop_toBottomOf="@+id/btnSin" />
+            app:layout_constraintTop_toBottomOf="@+id/row1" />
 
         <Button
             android:id="@+id/btnPer"
@@ -130,7 +122,7 @@
             app:layout_constraintEnd_toStartOf="@+id/btnDivide"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toEndOf="@+id/btnPositiveNegative"
-            app:layout_constraintTop_toBottomOf="@+id/btnCos" />
+            app:layout_constraintTop_toBottomOf="@+id/row1" />
 
         <Button
             android:id="@+id/btnDivide"
@@ -142,7 +134,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toEndOf="@+id/btnPer"
-            app:layout_constraintTop_toBottomOf="@+id/btnTan" />
+            app:layout_constraintTop_toBottomOf="@+id/row1" />
 
         <Button
             android:id="@+id/btn7"
@@ -313,18 +305,6 @@
             android:text="change"
             android:textSize="12sp"
             android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnEquals"
-            app:layout_constraintStart_toEndOf="@+id/btnPoint"
-            app:layout_constraintTop_toBottomOf="@+id/btn3" />
-
-        <Button
-            android:id="@+id/btnChangeToEngineer"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:text="change"
-            android:textSize="12sp"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnEquals"
             app:layout_constraintStart_toEndOf="@+id/btnPoint"
