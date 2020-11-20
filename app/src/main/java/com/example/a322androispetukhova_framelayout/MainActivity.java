@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (row1.getVisibility() == row1.VISIBLE){
+                if (row1.getVisibility() == View.VISIBLE){ ///!!!! Обратить внимание на View.VISIBLE!!!
                     row1.setVisibility(View.GONE);
 
                 }else{
